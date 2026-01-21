@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-// -------- COPY FILE (ASYNC) --------
+//copy file (async) 
 fs.copyFile("source.txt", "copy_async.txt", (err) => {
   if (err) {
     console.error("Async copy failed:", err);
@@ -8,7 +8,7 @@ fs.copyFile("source.txt", "copy_async.txt", (err) => {
   }
   console.log("Async copy completed");
 
-  // -------- DELETE FILE (ASYNC) --------
+  // delete file (async) 
   fs.unlink("copy_async.txt", (err) => {
     if (err) {
       console.error("Delete failed:", err);
@@ -18,7 +18,7 @@ fs.copyFile("source.txt", "copy_async.txt", (err) => {
   });
 });
 
-//  COPY FILE (SYNC) 
+//  copy file  (sync) 
 try {
   fs.copyFileSync("source.txt", "copy_sync.txt");
   console.log("Sync copy completed");
@@ -44,7 +44,7 @@ fs.mkdir("folder/folder1/folder2", { recursive: true }, (err) => {
   console.log("Nested directories created");
 });
 
-//  REMOVE DIRECTORY (OLD WAY) 
+//  REMOVE DIRECTORY  
 // fs.rmdir works ONLY if directory is empty
 fs.rmdir("newDirectory", (err) => {
   if (err) {
@@ -54,11 +54,12 @@ fs.rmdir("newDirectory", (err) => {
   console.log("Directory removed using rmdir");
 });
 
-// //  REMOVE FILE/DIRECTORY (MODERN WAY)
-// fs.rm("copy_sync.txt", (err) => {
-//   if (err) {
-//     console.error(err);
-//     return;
-//   }
-//   console.log("File removed using rm");
-// });
+//   REMOVE DIRECTORY 
+ fs.rm("copy_sync.txt", (err) => {
+   if (err) {
+     console.error(err);
+     return;
+   }
+   console.log("File removed using rm");
+ });
+
