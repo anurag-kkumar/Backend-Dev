@@ -1,20 +1,18 @@
-function capitalize(str) {
-return str.charAt(0).toUpperCase() + str.slice(1);
-}
+const { timeStamp } = require("console")
+const os=require("os")
+const fs=require("fs")
+const message = 
+`Time :${timeStamp}
+Free memory: ${os.freemem()/(1024*1024*1024)}
+Platform:${os.platform()}
+cpu:${os.cpus}`;
 
-
-function reverse(str) {
-return str.split('').reverse().join('');
-}
-
-
-function countVowels(str) {
-return (str.match(/[aeiou]/gi) || []).length;
-}
-
-
-module.exports = {
-capitalize,
-reverse,
-countVowels
-};
+setInterval(()=>{
+    
+fs.appendFile("./log.txt",message, (err) => {
+    if(err){
+        console.log(err);
+        
+    }
+})
+},5000)
