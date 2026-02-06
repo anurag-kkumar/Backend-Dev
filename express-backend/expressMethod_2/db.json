@@ -1,0 +1,19 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "anu",
+      "branch": "cse"
+    },
+    {
+      "id": 2,
+      "name": "Aman",
+      "branch": "ese"
+    },
+    {
+      "id": 3,
+      "name": "ravi",
+      "branch": "ml"
+    }
+  ]
+}
